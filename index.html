@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Customer Churn Prediction</h1>
+        <p>Enter customer details to predict the likelihood of churn.</p>
+
+        <form id="churn-form">
+            
+            <fieldset>
+                <legend>Customer Info</legend>
+                
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senior-citizen">Senior Citizen</label>
+                    <select id="senior-citizen">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="partner">Has a Partner</label>
+                    <select id="partner">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dependents">Has Dependents</label>
+                    <select id="dependents">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account & Services</legend>
+                
+                <div class="form-group">
+                    <label for="tenure">Tenure (Months)</label>
+                    <input type="number" id="tenure" value="1" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone-service">Phone Service</label>
+                    <select id="phone-service">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="multiple-lines">Multiple Lines</label>
+                    <select id="multiple-lines">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No phone service">No phone service</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="internet-service">Internet Service</label>
+                    <select id="internet-service">
+                        <option value="DSL">DSL</option>
+                        <option value="Fiber optic">Fiber optic</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="online-security">Online Security</label>
+                    <select id="online-security">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="online-backup">Online Backup</label>
+                    <select id="online-backup">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="device-protection">Device Protection</label>
+                    <select id="device-protection">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tech-support">Tech Support</label>
+                    <select id="tech-support">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="streaming-tv">Streaming TV</label>
+                    <select id="streaming-tv">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="streaming-movies">Streaming Movies</label>
+                    <select id="streaming-movies">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Billing & Contract</legend>
+                
+                <div class="form-group">
+                    <label for="contract">Contract</label>
+                    <select id="contract">
+                        <option value="Month-to-month">Month-to-month</option>
+                        <option value="One year">One year</option>
+                        <option value="Two year">Two year</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="paperless-billing">Paperless Billing</label>
+                    <select id="paperless-billing">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method">
+                        <option value="Electronic check">Electronic check</option>
+                        <option value="Mailed check">Mailed check</option>
+                        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                        <option value="Credit card (automatic)">Credit card (automatic)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="monthly-charges">Monthly Charges ($)</label>
+                    <input type="number" id="monthly-charges" value="70.00" step="0.01" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="total-charges">Total Charges ($)</label>
+                    <input type="number" id="total-charges" value="1000.00" step="0.01" min="0">
+                </div>
+            </fieldset>
+            
+            <button type="button" id="predict-button">Predict Churn</button>
+
+            <div id="result-container">
+                <h3>Prediction Result:</h3>
+                <p id="prediction-result">--</p>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
