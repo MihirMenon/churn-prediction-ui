@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 🚨 PASTE YOUR API URL HERE
     // This is the "Invoke URL" from your API Gateway in Phase 4.
-    const API_URL = 'https://https://5rh41ecvfd.execute-api.us-east-1.amazonaws.com/predict'; 
+    const API_URL = 'https://5rh41ecvfd.execute-api.us-east-1.amazonaws.com/predict'; 
 
     // Get references to all the important HTML elements
     const predictButton = document.getElementById('predict-button');
@@ -198,5 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Join all 27 features into a single, comma-separated string
         return features.join(',');
     }
+
 
 });
